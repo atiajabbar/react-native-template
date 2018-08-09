@@ -100,7 +100,6 @@ android {
 
     defaultConfig {
         applicationId "com.reactnativetemplate"
-        mapsApiKey project.env.get("MAPS_API_KEY")
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
