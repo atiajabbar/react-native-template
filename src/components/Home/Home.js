@@ -11,9 +11,13 @@ import getUser from '../../selectors/UserSelectors';
 import styles from './styles';
 
 class Home extends Component {
-  static navigatorStyle = {
-    navBarHidden: true,
-  };
+  static options() {
+    return {
+      topBar: {
+        visible: false,
+      },
+    };
+  }
 
   render() {
     const { user } = this.props;

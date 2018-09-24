@@ -85,10 +85,14 @@ class App {
     });
   }
 
+  // registerScreens = () => registerScreens(this.store, this.provider);
+
   startApp = () => {
     registerScreens(this.store, this.provider);
-    persist(() => {
-      this.startLoggedOutApp();
+    Navigation.events().registerAppLaunchedListener(() => {
+      persist(() => {
+        this.startLoggedOutApp();
+      });
     });
   }
 }

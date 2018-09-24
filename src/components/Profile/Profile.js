@@ -14,14 +14,14 @@ import App from '../../App';
 import styles from './styles';
 
 class Profile extends Component {
-  static getDerivedStateFromProps(nextProps) {
-    if (nextProps.user === null) {
+  state = {};
+
+  componentDidUpdate() {
+    if (this.props.user === null) {
       App.startLoggedOutApp();
     }
     return null;
   }
-
-  state = {};
 
   logout = () => this.props.logout();
 

@@ -27,19 +27,16 @@ class Login extends Component {
     };
   }
 
-  static getDerivedStateFromProps(nextProps) {
-    if (nextProps.user !== null) {
+  state = {
+    email: '',
+    password: '',
+  };
+
+  componentDidUpdate() {
+    if (this.props.user !== null) {
       App.startLoggedInApp();
     }
     return null;
-  }
-
-  constructor() {
-    super();
-    this.state = {
-      email: '',
-      password: '',
-    };
   }
 
   passwordChanged = value => this.setState({ password: value });
